@@ -2,89 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Coming Soon</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-
-      background: linear-gradient(-45deg, #000000, #1a1a1a, #2b2b2b, #111111);
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
-    }
-
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      max-width: 600px;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 2rem;
-      font-weight: 500;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #cccccc;
-      margin-bottom: 20px;
-    }
-
-    #countdown {
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-      color: #ffffff;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>the vote · may 9</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>This website hasn't been set up yet</h1>
-    <p>yes, declan hasn't coded this website yet...please wait until April 29 @ 7:00am</p>
-    <div id="countdown">Loading...</div>
-  </div>
 
-  <script>
-    // Set target date (April 28 @ 7:00 AM)
-    const targetDate = new Date("April 29, 2026 07:00:00").getTime();
+  <!-- VIEW: MAIN -->
+  <section class="view" id="view-main">
+    <div class="hero">
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+      <div class="countdown-wrap">
+        <div class="cd-unit">
+          <span class="cd-num" id="cd-days">00</span>
+          <span class="cd-label">days</span>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit">
+          <span class="cd-num" id="cd-hours">00</span>
+          <span class="cd-label">hrs</span>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit">
+          <span class="cd-num" id="cd-mins">00</span>
+          <span class="cd-label">min</span>
+        </div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit">
+          <span class="cd-num" id="cd-secs">00</span>
+          <span class="cd-label">sec</span>
+        </div>
+      </div>
 
-      if (distance <= 0) {
-        document.getElementById("countdown").innerHTML = "It's live 🚀";
-        return;
-      }
+      <div class="action-group">
+        <a href="https://forms.gle/91VpsHUhBbFj8our6" target="_blank" rel="noopener" class="btn btn-primary">
+          cast your vote
+        </a>
+        <button class="btn btn-ghost" id="stats-btn">see stats →</button>
+      </div>
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
+      <div class="last-updated" id="last-updated-main">—</div>
+    </div>
+  </section>
 
-      document.getElementById("countdown").innerHTML =
-        `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
+  <!-- VIEW: STATS -->
+  <section class="view view-right" id="view-stats">
+    <header class="stats-bar">
+      <button class="btn-back" id="back-btn">← back</button>
+      <div class="stats-bar-right">
+        <span class="last-updated" id="last-updated-stats">—</span>
+        <button class="refresh-btn" id="refresh-btn">↻</button>
+      </div>
+    </header>
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
+    <div class="stats-scroll">
+      <div class="stats-content">
+
+        <div class="state-row" id="state-loading">
+          <div class="spinner"></div>
+          <span>fetching votes…</span>
+        </div>
+
+        <div class="state-row hidden" id="state-error">
+          ⚠ couldn't load — check <code>GITHUB_VOTES_URL</code> in script.js
+        </div>
+
+        <div class="state-row hidden" id="state-noconfig">
+          set <code>GITHUB_VOTES_URL</code> in script.js to your raw github file url
+        </div>
+
+        <div class="chart-area" id="chart-area"></div>
+
+        <div class="total-row" id="total-votes"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <a href="https://youtube.com/@mrdkmkl" target="_blank" rel="noopener" class="footer-credit">
+    made by @mrdkmkl
+  </a>
+
+  <script src="script.js"></script>
 </body>
 </html>
