@@ -1,7 +1,7 @@
-Omni - 1
-Felix - 0
-Annie - 0
-Karam - 1
-Myat - 1
-Tanner - 0
-Aiden - 1
+Omni - 3
+Felix - 2
+Annie - 1
+Karam - 3
+Myat - 3
+Tanner - 1
+Aiden - 6
