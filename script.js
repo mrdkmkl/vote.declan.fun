@@ -7,16 +7,18 @@
 
 const TARGET = new Date('2026-05-09T10:00:00');
 
-const PEOPLE = ['Omni', 'Felix', 'Annie', 'Karam', 'Myat', 'Tanner', 'Aiden'];
+const PEOPLE = ['Omni', 'Felix', 'Annie', 'Karam', 'Myat', 'Tanner', 'Aiden', 'Lincoln', 'Lily'];
 
 const COLORS = {
-  Omni:   '#ff6b6b',
-  Felix:  '#4ecdc4',
-  Annie:  '#ffe66d',
-  Karam:  '#a8ff78',
-  Myat:   '#c77dff',
-  Tanner: '#ff9a3c',
-  Aiden:  '#48cae4',
+  Omni:    '#ff6b6b',
+  Felix:   '#4ecdc4',
+  Annie:   '#ffe66d',
+  Karam:   '#a8ff78',
+  Myat:    '#c77dff',
+  Tanner:  '#ff9a3c',
+  Aiden:   '#48cae4',
+  Lincoln: '#f4a261',
+  Lily:    '#f72585',
 };
 
 let chartRendered = false;
