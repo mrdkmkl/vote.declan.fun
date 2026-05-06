@@ -1,10 +1,10 @@
-Omni - 25
-Felix - 6
-Annie - 13
-Karam - 12
-Myat - 11
+Omni - 27
+Felix - 7
+Annie - 17
+Karam - 15
+Myat - 13
 Tanner - 6
-Aiden - 16
+Aiden - 18
 Lincoln - 3
-Lily - 39
+Lily - 42
  
